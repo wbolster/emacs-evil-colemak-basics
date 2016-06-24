@@ -4,7 +4,7 @@
 ;; Version: 1.0.0
 ;; Package-Requires: ((emacs "24") (evil "0"))
 ;; Keywords: colemak evil
-;; URL: http://github.com/wbolster/evil-colemak-basics
+;; URL: https://github.com/wbolster/evil-colemak-basics
 ;;
 ;; This file is not part of GNU Emacs.
 
