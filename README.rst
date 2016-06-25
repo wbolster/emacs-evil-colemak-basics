@@ -1,9 +1,9 @@
-===================
-evil-colemak-basics
-===================
+======================
+evil-colemak-basics.el
+======================
 
-This package provides basic key bindings for ``evil-mode`` for use
-with the Colemak keyboard layout.
+This Emacs package provides basic key bindings for ``evil-mode`` for
+use with the Colemak keyboard layout.
 
 It changes just a few key bindings, namely those used for basic
 navigation, and only makes a minimal number of additional changes to
@@ -78,8 +78,8 @@ Operator-pending state:
   e.g. ``duw`` (``diw`` on Qwerty) deletes the inner word
 
 In addition to the keys listed explicitly above, variations like
-``gj`` and ``gk`` to navigate visual lines instead of real lines also
-behave as expected.
+``gn``/``ge`` (``gj``/``gk`` on Qwerty) to navigate visual lines
+instead of real lines also behave as expected.
 
 
 Installation
@@ -87,14 +87,16 @@ Installation
 
 This package is available from Melpa and can be installed with the
 package manager (``package.el``) that comes bundled with Emacs 24+.
-Simply run
+Simply run::
 
-::
+  M-x package-install RET evil-colemak-basics RET
 
-  M-x package-install RET
+Alternatively, put the Elisp file somewhere in your loading path and
+load it explicitly::
 
-and choose ``evil-colemak-basics``. Alternatively, put the Elisp file
-somewhere in your loading path and ``(require)`` it explicitly.
+  (require 'evil-colemak-basics)
+
+Note that this ``(require)`` is not needed when installing from Melpa.
 
 
 Usage
@@ -108,7 +110,7 @@ To enable for just a single buffer, use::
 
   M-x evil-colemak-basics-mod RET
 
-To enable permanently, just put this in your ``init.el``::
+To enable permanently, put this in your ``init.el``::
 
   (global-evil-colemak-basics-mode)
 
