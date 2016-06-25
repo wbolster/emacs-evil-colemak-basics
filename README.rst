@@ -2,7 +2,7 @@
 evil-colemak-basics
 ===================
 
-This package provides basic key rebindings for ``evil-mode`` for use
+This package provides basic key bindings for ``evil-mode`` for use
 with the Colemak keyboard layout.
 
 It changes just a few key bindings, namely those used for basic
@@ -120,7 +120,7 @@ Colemak layout on top of a Qwerty layout.
 Credits
 =======
 
-These rebindings were inspired by a similar configuration for Vim and
+These bindings were inspired by a similar configuration for Vim and
 other software by James Pike, available from
 https://github.com/ohjames/colemak
 
