@@ -1,4 +1,4 @@
-;;; evil-colemak-basics.el --- Basic Colemak key bindings for evil-mode.
+;;; evil-colemak-basics.el --- Basic Colemak key bindings for evil-mode
 
 ;; Author: Wouter Bolsterlee <wouter@bolsterl.ee>
 ;; Version: 1.0.0
