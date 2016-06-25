@@ -44,13 +44,20 @@
 (evil-define-minor-mode-key
   'motion 'evil-colemak-basics-mode
   "n" 'evil-next-line
+  "gn" 'evil-next-visual-line
+  "gN" 'evil-next-visual-line
   "e" 'evil-previous-line
+  "ge" 'evil-previous-visual-line
   "E" 'evil-lookup
   "i" 'evil-forward-char
   "j" 'evil-forward-word-end
   "J" 'evil-forward-WORD-end
+  "gj" 'evil-backward-word-end
+  "gJ" 'evil-backward-WORD-end
   "k" 'evil-search-next
-  "K" 'evil-search-previous)
+  "K" 'evil-search-previous
+  "gk" 'evil-next-match
+  "gK" 'evil-previous-match)
 
 (evil-define-minor-mode-key
   'normal 'evil-colemak-basics-mode
@@ -61,6 +68,7 @@
   "K" 'evil-search-previous
   "l" 'undo-tree-undo
   "N" 'evil-join
+  "gN" 'evil-join-whitespace
   "u" 'evil-insert
   "U" 'evil-insert-line)
 

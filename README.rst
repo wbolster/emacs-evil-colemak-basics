@@ -77,6 +77,10 @@ Operator-pending state:
   (``i`` on Qwerty, same position),
   e.g. ``duw`` (``diw`` on Qwerty) deletes the inner word
 
+In addition to the keys listed explicitly above, variations like
+``gj`` and ``gk`` to navigate visual lines instead of real lines also
+behave as expected.
+
 
 Installation
 ============
@@ -127,8 +131,6 @@ https://github.com/ohjames/colemak
 
 To do
 =====
-
-* handle ``gj``, ``gk``, ``ge``, ``gE``
 
 * allow enabling/disabling via custom
 
