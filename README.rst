@@ -5,39 +5,28 @@ evil-colemak-basics.el
 This Emacs package provides basic key bindings for ``evil-mode`` for
 use with the Colemak keyboard layout.
 
-It changes just a few key bindings, namely those used for basic
-navigation, and only makes a minimal number of additional changes to
-deal sensibly with the conflicts introduced by remapping the
-navigation keys.
 
-
-Background
+Basic idea
 ==========
 
-Some other Colemak packages for Emacs/Evil (and Vim) redefine a big
-part of the keyboard and hence significantly change the editing
-experience. This is a no go for seasoned users who are used to the
-default Emacs/Evil (and Vim) key bindings, and just want a new
-keyboard layout, not a new editor.
+The core design principle is that the ``hnei`` keys (``hjkl`` on
+Qwerty) are used for navigation. This has a few implications:
 
-The other extreme would be to not change anything at all. Since this
-breaks muscle memory for commonly used navigation keys, it makes
-switching to Colemak (from Qwerty) even harder. More importantly, this
-also results in non-ergonomic navigation, which defeats the purpose of
-using Colemak in the first place.
+* The ``h`` key stays at the same position. It stays as-is.
 
-This package provides a sensible compromise. The core principle is
-that ``h``/``n``/``e``/``i`` (``h``/``j``/``k``/``l`` on Qwerty) are
-used for navigation. That means that the functionality for
-``n``/``e``/``i`` (and ``N``/``E``/``I``) needs a new place. The ``h``
-key stays at the same position, and hence needs no special handling.
-Since ``k``/``l``/``j`` (``n``/``u``/``y`` on Qwerty) are now free,
-simply move it there. As a final tweak, swap ``u`` and ``l`` so that
-undo and insert have the same positions on both Colemak and Qwerty.
+* Since ``nei`` are now used for navigation, the original
+  functionality for ``n`` (next search match), ``e`` (end of word) and
+  ``i`` (insert) needs a new place. Since ``j``, ``k``, and ``l``
+  (``y``, ``n``, and ``l`` on Qwerty) are no longer needed for
+  navigation, intelligently move these features to their positions
+  while retaining as much muscle memory as possible.
 
-The end result is that you do not need to
-retrain your muscle memory for navigation, insert, undo, and search
-match navigation.
+* As a final tweak, ``u`` and ``l`` get swapped so that undo and
+  insert have the same positions on both Colemak and Qwerty. Again,
+  retain muscle memory.
+
+The result is that you do not need to retrain your muscle memory
+for navigation, insert, undo, and search match navigation.
 
 
 Key bindings
@@ -48,19 +37,19 @@ normal positions. On top of that the following keys are changed.
 
 Motion, normal, visual and operator-pending state:
 
-- ``h``/``n``/``e``/``i`` to navigate
-  (``h``/``j``/``k``/``l`` on Qwerty, same position)
+- ``hnei`` to navigate
+  (``hjkl`` on Qwerty, same position)
 
-- ``k``/``K`` to search next/previous
-  (``n``/``N`` on Qwerty, same position)
+- ``k`` and ``K`` to search next/previous
+  (``n`` and ``N`` on Qwerty, same position)
 
-- ``j``/``J`` to jump to end of word/WORD
-  (``e``/``E`` on Qwerty, *not* same position)
+- ``j`` and ``J`` to jump to end of word/WORD
+  (``e`` and ``E`` on Qwerty, *different* position)
 
 Normal and visual state:
 
-- ``u``/``U`` to insert
-  (``i``/``I`` on Qwerty, same position)
+- ``u`` and ``U`` to insert
+  (``i`` and ``I`` on Qwerty, same position)
 
 - ``l`` to undo
   (``u`` on Qwerty, same position)
@@ -78,8 +67,29 @@ Operator-pending state:
   e.g. ``duw`` (``diw`` on Qwerty) deletes the inner word
 
 In addition to the keys listed explicitly above, variations like
-``gn``/``ge`` (``gj``/``gk`` on Qwerty) to navigate visual lines
-instead of real lines also behave as expected.
+``gn`` and ``ge`` (``gj`` and ``gk`` on Qwerty) to navigate visual
+lines instead of real lines also behave as expected.
+
+
+Background
+==========
+
+Some other Colemak packages for Emacs/Evil (and Vim) redefine a big
+part of the keyboard and hence significantly change the editing
+experience. This is a no go for seasoned users who are used to the
+default Emacs/Evil (and Vim) key bindings, and just want a new
+keyboard layout, not a new editor.
+
+The other extreme would be to not change anything at all. Since this
+breaks muscle memory for commonly used navigation keys, it makes
+switching to Colemak (from Qwerty) even harder. More importantly, this
+also results in non-ergonomic navigation, which defeats the purpose of
+using Colemak in the first place.
+
+This package provides a sensible compromise. It changes just a few key
+bindings, namely those used for basic navigation, and only makes a
+minimal number of additional changes to deal sensibly with the
+conflicts introduced by remapping the navigation keys.
 
 
 Installation
@@ -133,7 +143,5 @@ https://github.com/ohjames/colemak
 
 To do
 =====
-
-* allow enabling/disabling via custom
 
 * add customisable next/previous line functions (visual-line vs regular line)
