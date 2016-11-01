@@ -139,9 +139,3 @@ Credits
 These bindings were inspired by a similar configuration for Vim and
 other software by James Pike, available from
 https://github.com/ohjames/colemak
-
-
-To do
-=====
-
-* add customisable next/previous line functions (visual-line vs regular line)
