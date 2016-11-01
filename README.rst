@@ -17,7 +17,7 @@ Qwerty) are used for navigation. This has a few implications:
 * Since ``nei`` are now used for navigation, the original
   functionality for ``n`` (next search match), ``e`` (end of word) and
   ``i`` (insert) needs a new place. Since ``j``, ``k``, and ``l``
-  (``y``, ``n``, and ``l`` on Qwerty) are no longer needed for
+  (``y``, ``n``, and ``u`` on Qwerty) are no longer needed for
   navigation, intelligently move these features to their positions
   while retaining as much muscle memory as possible.
 
