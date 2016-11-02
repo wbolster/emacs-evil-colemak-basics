@@ -37,38 +37,69 @@ normal positions. On top of that the following keys are changed.
 
 Motion, normal, visual and operator-pending state:
 
-- ``hnei`` to navigate
-  (``hjkl`` on Qwerty, same position)
+.. list-table::
+   :header-rows: 1
 
-- ``k`` and ``K`` to search next/previous
-  (``n`` and ``N`` on Qwerty, same position)
-
-- ``j`` and ``J`` to jump to end of word/WORD
-  (``e`` and ``E`` on Qwerty, *different* position)
+   * - Colemak
+     - Qwerty
+     - Action
+     - Same position?
+   * - ``hnei``
+     - ``hjkl``
+     - navigate
+     - yes
+   * - ``k`` and ``K``
+     - ``n`` and ``N``
+     - search next/previous
+     - yes
+   * - ``j`` and ``J``
+     - ``e`` and ``E``
+     - jump to end of word/WORD
+     - no
 
 Normal and visual state:
 
-- ``u`` and ``U`` to insert
-  (``i`` and ``I`` on Qwerty, same position)
+.. list-table::
+   :header-rows: 1
 
-- ``l`` to undo
-  (``u`` on Qwerty, same position)
-
-- ``N`` to join lines
-  (``J`` on Qwerty, same position)
-
-- ``E`` for lookup
-  (``K`` on Qwerty, same position)
+   * - Colemak
+     - Qwerty
+     - Action
+     - Same position?
+   * - ``u`` and ``U``
+     - ``i`` and ``I``
+     - insert
+     - yes
+   * - ``l``
+     - ``u``
+     - undo
+     - yes
+   * - ``N``
+     - ``J``
+     - join lines
+     - yes
+   * - ``E``
+     - ``K``
+     - lookup
+     - yes
 
 Operator-pending state:
 
-- ``u`` for choosing an inner text object
-  (``i`` on Qwerty, same position),
-  e.g. ``duw`` (``diw`` on Qwerty) deletes the inner word
+.. list-table::
+   :header-rows: 1
 
-In addition to the keys listed explicitly above, variations like
-``gn`` and ``ge`` (``gj`` and ``gk`` on Qwerty) to navigate visual
-lines instead of real lines also behave as expected.
+   * - Colemak
+     - Qwerty
+     - Action
+     - Same position?
+   * - ``u``
+     - ``i``
+     - inner text object keymap
+     - yes
+
+Note that in addition to the keys listed explicitly above, variations
+like ``gn`` and ``ge`` (``gj`` and ``gk`` on Qwerty) to navigate
+visual lines instead of real lines also behave as expected.
 
 
 Background
