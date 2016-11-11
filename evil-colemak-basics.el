@@ -29,10 +29,48 @@
 
 (require 'evil)
 
+(defun evil-colemak-basics--make-keymap ()
+  "Initialise the keymap baset on the current configuration."
+  (let ((keymap (make-sparse-keymap)))
+    (evil-define-key '(motion normal visual) keymap
+      "n" 'evil-next-line
+      "gn" 'evil-next-visual-line
+      "gN" 'evil-next-visual-line
+      "e" 'evil-previous-line
+      "ge" 'evil-previous-visual-line
+      "E" 'evil-lookup
+      "i" 'evil-forward-char
+      "j" 'evil-forward-word-end
+      "J" 'evil-forward-WORD-end
+      "gj" 'evil-backward-word-end
+      "gJ" 'evil-backward-WORD-end
+      "k" 'evil-search-next
+      "K" 'evil-search-previous
+      "gk" 'evil-next-match
+      "gK" 'evil-previous-match)
+    (evil-define-key '(normal visual) keymap
+      "l" 'undo-tree-undo
+      "N" 'evil-join
+      "gN" 'evil-join-whitespace)
+    (evil-define-key 'normal keymap
+      "u" 'evil-insert
+      "U" 'evil-insert-line)
+    (evil-define-key 'visual keymap
+      "U" 'evil-insert)
+    (evil-define-key '(visual operator) keymap
+      "u" evil-inner-text-objects-map)
+    (evil-define-key 'operator keymap
+      "i" 'evil-forward-char)
+    keymap))
+
+(defvar evil-colemak-basics-keymap
+  (evil-colemak-basics--make-keymap)
+  "Keymap for evil-colemak-basics-mode.")
+
 ;;;###autoload
 (define-minor-mode evil-colemak-basics-mode
   "Minor mode with evil-mode enhancements for the Colemak keyboard layout."
-  :keymap (make-sparse-keymap)
+  :keymap evil-colemak-basics-keymap
   :lighter " hnei")
 
 ;;;###autoload
@@ -40,53 +78,6 @@
   evil-colemak-basics-mode
   (lambda () (evil-colemak-basics-mode t))
   "Global minor mode with evil-mode enhancements for the Colemak keyboard layout.")
-
-(evil-define-minor-mode-key
-  'motion 'evil-colemak-basics-mode
-  "n" 'evil-next-line
-  "gn" 'evil-next-visual-line
-  "gN" 'evil-next-visual-line
-  "e" 'evil-previous-line
-  "ge" 'evil-previous-visual-line
-  "E" 'evil-lookup
-  "i" 'evil-forward-char
-  "j" 'evil-forward-word-end
-  "J" 'evil-forward-WORD-end
-  "gj" 'evil-backward-word-end
-  "gJ" 'evil-backward-WORD-end
-  "k" 'evil-search-next
-  "K" 'evil-search-previous
-  "gk" 'evil-next-match
-  "gK" 'evil-previous-match)
-
-(evil-define-minor-mode-key
-  'normal 'evil-colemak-basics-mode
-  "i" 'evil-forward-char
-  "j" 'evil-forward-word-end
-  "J" 'evil-forward-WORD-end
-  "k" 'evil-search-next
-  "K" 'evil-search-previous
-  "l" 'undo-tree-undo
-  "N" 'evil-join
-  "gN" 'evil-join-whitespace
-  "u" 'evil-insert
-  "U" 'evil-insert-line)
-
-(evil-define-minor-mode-key
-  'visual 'evil-colemak-basics-mode
-  "i" 'evil-forward-char
-  "j" 'evil-forward-word-end
-  "J" 'evil-forward-WORD-end
-  "K" 'evil-search-previous
-  "l" 'undo-tree-undo
-  "N" 'evil-join
-  "u" evil-inner-text-objects-map
-  "U" 'evil-insert)
-
-(evil-define-minor-mode-key
-  'operator 'evil-colemak-basics-mode
-  "i" 'evil-forward-char
-  "u" evil-inner-text-objects-map)
 
 (provide 'evil-colemak-basics)
 
