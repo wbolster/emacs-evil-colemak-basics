@@ -29,6 +29,11 @@
 
 (require 'evil)
 
+(defgroup evil-colemak-basics nil
+  "Basic key rebindings for evil-mode with the Colemak keyboard layout."
+  :prefix "evil-colemak-basics-"
+  :group 'evil)
+
 (defun evil-colemak-basics--make-keymap ()
   "Initialise the keymap baset on the current configuration."
   (let ((keymap (make-sparse-keymap)))
