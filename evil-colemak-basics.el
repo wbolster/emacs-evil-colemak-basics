@@ -72,6 +72,10 @@
   (evil-colemak-basics--make-keymap)
   "Keymap for evil-colemak-basics-mode.")
 
+(defun evil-colemak-basics--refresh-keymap ()
+  "Refresh the keymap using the current configuration."
+  (setq evil-colemak-basics-keymap (evil-colemak-basics--make-keymap)))
+
 ;;;###autoload
 (define-minor-mode evil-colemak-basics-mode
   "Minor mode with evil-mode enhancements for the Colemak keyboard layout."
