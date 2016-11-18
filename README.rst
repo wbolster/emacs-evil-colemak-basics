@@ -142,32 +142,36 @@ qwerty  z x c v b n m
 Design rationale
 ================
 
-Some other Colemak packages for Emacs/Evil (and Vim) redefine a big
-part of the keyboard and hence significantly change the editing
-experience. This is a no go for seasoned users who are used to the
-default Emacs/Evil (and Vim) key bindings, and just want a new
-keyboard layout, not a new editor.
+Some other Colemak configurations for Emacs/Evil (and Vim) redefine
+big parts of the non-insert states (normal, visual, and so on) by
+changing or even completely removing standard Vim commands. Such
+changes significantly change the editing experience. This is a no go
+for seasoned users who are used to the default Emacs/Evil (and Vim)
+key bindings, and just want a new keyboard layout, not a new editor.
 
-The other extreme would be to not change anything at all. Since this
-breaks muscle memory for commonly used navigation keys, it makes
-switching to Colemak (from Qwerty) even harder. More importantly, this
-also results in non-ergonomic navigation, which defeats the purpose of
-using Colemak in the first place.
+The other extreme is to not change anything at all. While a ‘no
+configuration’ approach may work fine for some, others consider it
+simply unacceptable to not have ‘arrow navigation’ keys (which are not
+mnemonic commands) at their usual ergonomic home row positions,
+because it completely breaks their muscle memory, making the switch to
+Colemak (from Qwerty) even harder than it already is.
 
-This package provides a sensible compromise. It changes a few key
-bindings, namely those used for basic navigation (``hnei``), and only
-makes a number of additional cascading changes to deal sensibly with
-the implications of remapping the navigation keys. No functionality is
+This package provides a sensible compromise between ‘change
+everything’ and ‘change nothing’. It changes a few key bindings,
+namely those used for basic navigation (``hnei``), and only makes a
+number of additional cascading changes to deal sensibly with the
+implications of remapping the navigation keys. No functionality is
 lost.
 
-The design steps to arrive at the key bindings provided by this package are as follows:
+The design steps to arrive at the key bindings provided by this
+package are as follows:
 
 * The starting point is a standard Colemak keyboard layout. This works
   well for many mnemonic keys like ``d`` (delete), ``p`` (put/paste),
   ``y`` (yank), and various others.
 
-* The ``hnei`` (``hjkl`` on qwerty) keys are used for navigation. This
-  is a must-have for ergonomic ‘arrow key’ navigation.
+* The ``hnei`` (``hjkl`` on Qwerty) keys are used for the familiar
+  ‘arrow key’ navigation.
 
 * This means ``n`` (next search match), ``e`` (end of word) and ``i``
   (insert) need a new home. All of these move to their Qwerty
@@ -176,11 +180,15 @@ The design steps to arrive at the key bindings provided by this package are as f
 * As a consequence, ``u`` (undo), and ``f`` (jump to character) need a
   new home. Also move these to their Qwerty positions.
 
-* At this point, all commands are either at their Colemak or Qwerty
-  position, with one exception. The infrequently used ``t`` (jump
-  until character) command has to be relocated to Colemak ``j``, the
-  only remaining spot, which is not only hard to reach, but also
-  matches neither its Colemak nor its Qwerty location.
+* At this point only ``t`` (jump until character) needs a new home. It
+  cannot go to its Qwerty position, since that would cause a cascade
+  of follow-up changes that would break many mnemonic keys. Therefore
+  it moves to Colemak ``j``, the only remaining unused spot. This
+  position is hard to reach, but since this command is not frequently
+  used, this is an acceptable trade-off.
+
+* Now all commands are either at their Colemak or Qwerty position,
+  except for ‘jump until character‘, which is at neither.
 
 While this may seem complex, the result is that you can happily think
 and type in Colemak, while you can use muscle memory for many often
@@ -194,12 +202,14 @@ used commands:
 * jump to character
 
 …in addition to all the keys that already have the same position on
-Colemak and Qwerty.
+Colemak and Qwerty, such as ``b`` (previous word), ``c`` (change),
+``w`` (next word), and various others.
 
-A lighter variation of the above scheme is also available by omitting
-the ``t-f-j`` rotation, which will cause ``t`` (jump until character)
-and ``f`` (jump to character) to live at their Colemak position, which
-means that the ‘end of word’ command ends up at the ``j`` position,
+As an alternative, a lighter variation of the above scheme is also
+available by omitting the ``t-f-j`` rotation. Without that rotation,
+``t`` (jump until character) and ``f`` (jump to character) stay at
+their Colemak position, which some may prefer. The downside is that
+the ‘end of word’ command ends up at the hard to reach ``j`` position.
 
 
 Installation
