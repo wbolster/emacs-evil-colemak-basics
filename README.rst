@@ -15,7 +15,7 @@ are in their Colemak or Qwerty positions, depending on what provides
 the most ergonomic editing experience, and `muscle memory`_ is
 retained for many frequently used commands.
 
-.. _muscle memory: https://en.wikipedia.org/wiki/Muscle_memory>
+.. _muscle memory: https://en.wikipedia.org/wiki/Muscle_memory
 
 
 Key bindings
