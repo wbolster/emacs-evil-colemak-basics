@@ -267,6 +267,11 @@ character’ commands, use::
 
 .. _evil-snipe: https://github.com/hlissner/evil-snipe
 
+Note that this package will load ``evil-snipe``, so if you have any
+configuration that should be set before ``evil-snipe`` is loaded, such
+as ``evil-snipe-auto-disable-substitute``, make sure to configure
+``evil-snipe`` before this package is loaded.
+
 You can also use the customize interface to get more information about
 these settings::
 

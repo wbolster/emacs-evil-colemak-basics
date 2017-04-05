@@ -2,7 +2,7 @@
 
 ;; Author: Wouter Bolsterlee <wouter@bolsterl.ee>
 ;; Version: 2.0.0
-;; Package-Requires: ((emacs "24") (evil "1.2.12"))
+;; Package-Requires: ((emacs "24") (evil "1.2.12") (evil-snipe "2.0.3"))
 ;; Keywords: colemak evil
 ;; URL: https://github.com/wbolster/evil-colemak-basics
 ;;
@@ -28,6 +28,7 @@
 ;;; Code:
 
 (require 'evil)
+(require 'evil-snipe)
 
 (defgroup evil-colemak-basics nil
   "Basic key rebindings for evil-mode with the Colemak keyboard layout."
@@ -106,7 +107,6 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
             "j" 'evil-find-char-to
             "J" 'evil-find-char-to-backward))
        ((eq evil-colemak-basics-char-jump-commands 'evil-snipe)
-        (require 'evil-snipe)
         ;; XXX https://github.com/hlissner/evil-snipe/issues/46
         (evil-snipe-def 1 inclusive "t" "T")
         (evil-snipe-def 1 exclusive "j" "J")
