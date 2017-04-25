@@ -77,7 +77,9 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
       "k" 'evil-search-next
       "K" 'evil-search-previous
       "gk" 'evil-next-match
-      "gK" 'evil-previous-match)
+      "gK" 'evil-previous-match
+      "zi" 'evil-scroll-column-right
+      "zI" 'evil-scroll-right)
     (evil-define-key '(normal visual) keymap
       "l" 'undo-tree-undo
       "N" 'evil-join
