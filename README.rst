@@ -93,7 +93,7 @@ operator-pending state (``o``, inherits from motion state):
      - with ``t-f-j`` rotation
 
    * - ``t``, ``T``
-     - ``f``, ``f``
+     - ``f``, ``F``
      - jump to character
      - ``mnvo``
      - yes
