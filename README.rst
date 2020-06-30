@@ -217,7 +217,11 @@ Installation
 
 This package is available from Melpa and can be installed with the
 package manager (``package.el``) that comes bundled with Emacs 24+.
-Simply run::
+With `use-package`, the minimal form looks like like this::
+
+  (use-package evil-colemak-basics)
+
+Or manually install by running::
 
   M-x package-install RET evil-colemak-basics RET
 
@@ -240,9 +244,11 @@ To enable for just a single buffer, use::
 
   M-x evil-colemak-basics-mod RET
 
-To enable permanently, put this in your ``init.el``::
+To enable permanently, call ``(global-evil-colemak-basics-mode)`` from your ``init.el``. With ``use-package`` this looks like this::
 
-  (global-evil-colemak-basics-mode)
+  (use-package evil-colemak-basics
+    :config
+    (global-evil-colemak-basics-mode))
 
 When enabled, a lighter showing ``hnei`` will appear in your mode
 line. If you don't like it, use ``rich-minority`` or ``diminish`` to
@@ -270,7 +276,15 @@ character’ commands, use::
 Note that this package will load ``evil-snipe``, so if you have any
 configuration that should be set before ``evil-snipe`` is loaded, such
 as ``evil-snipe-auto-disable-substitute``, make sure to configure
-``evil-snipe`` before this package is loaded.
+``evil-snipe`` before this package is loaded. With ``use-package`` it
+looks like this::
+
+  (use-package evil-colemak-basics
+    :after evil evil-snipe
+    :init
+    (setq evil-colemak-basics-char-jump-commands 'evil-snipe)
+    :config
+    (global-evil-colemak-basics-mode))
 
 You can also use the customize interface to get more information about
 these settings::
