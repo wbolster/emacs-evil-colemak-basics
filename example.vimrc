@@ -10,9 +10,9 @@ noremap K N
 noremap u i
 noremap U I
 noremap l u
+noremap L U
 noremap N J
 noremap E K
-noremap u i
 
 " (setq evil-colemak-basics-rotate-t-f-j t) 
 " default
