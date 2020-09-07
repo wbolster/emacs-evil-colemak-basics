@@ -3,7 +3,9 @@ evil-colemak-basics.el
 ======================
 
 This Emacs package provides basic key bindings for evil-mode_
-optimized for the Colemak_ keyboard layout.
+optimized for the Colemak_ keyboard layout. (As an extra, there
+is also a Vim version of most of the bindings, though Vim is
+less hackable than Emacs.)
 
 .. _evil-mode: https://bitbucket.org/lyro/evil/
 .. _Colemak: https://colemak.com/
