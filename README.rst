@@ -124,19 +124,19 @@ Qwerty meaning, the same meaning, or neither.
 
 ======= = = = = = = = = = =
 colemak q w f p g j l u y ;
-\       ↕ ↕ ↓ ↑ ↑ – ↓ ↓ ↑ ↑
+\       ↕ ↕ ⬇ ⬆ ⬆ 😕 ⬇ ⬇ ⬆ ⬆
 qwerty  q w e r t y u i o p
 ======= = = = = = = = = = =
 
 ======= = = = = = = = = = =
 colemak a r s t d h n e i o
-\       ↕ ↑ ↑ ↓ ↑ ↕ ↓ ↓ ↓ ↑
+\       ↕ ⬆ ⬆ ⬇ ⬆ ↕ ⬇ ⬇ ⬇ ⬆
 qwerty  a s d f g h j k l ;
 ======= = = = = = = = = = =
 
 ======= = = = = = = =
 colemak z x c v b k m
-\       ↕ ↕ ↕ ↕ ↕ ↓ ↕
+\       ↕ ↕ ↕ ↕ ↕ ⬇ ↕
 qwerty  z x c v b n m
 ======= = = = = = = =
 
