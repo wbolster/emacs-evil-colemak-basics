@@ -124,7 +124,7 @@ Qwerty meaning, the same meaning, or neither.
 
 ======= = = = = = = = = = =
 colemak q w f p g j l u y ;
-\       ↕ ↕ ⬇ ⬆ ⬆ ❌ ⬇ ⬇ ⬆ ⬆
+\       ↕ ↕ ⬇ ⬆ ⬆ × ⬇ ⬇ ⬆ ⬆
 qwerty  q w e r t y u i o p
 ======= = = = = = = = = = =
 
