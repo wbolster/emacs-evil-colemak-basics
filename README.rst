@@ -300,6 +300,18 @@ using ``(require …)`` or invoking any of the autoloaded functions like
 ``(global-evil-colemak-basics-mode)``.
 
 
+Mod-DH
+======
+
+Support for the mod-DH variation of Colemak, also known as mod-DHm,
+can be enabled with::
+
+  (setq evil-colemak-basics-layout-mod 'mod-dh)
+
+This will swap the bindings for ``m`` and ``h``, leaving all other
+bindings as is.
+
+
 Credits
 =======
 
