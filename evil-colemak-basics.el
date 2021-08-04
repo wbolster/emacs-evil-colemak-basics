@@ -81,7 +81,7 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
       "zi" 'evil-scroll-column-right
       "zI" 'evil-scroll-right)
     (evil-define-key '(normal visual) keymap
-      "l" 'undo-tree-undo
+      "l" 'evil-undo
       "N" 'evil-join
       "gN" 'evil-join-whitespace)
     (evil-define-key 'normal keymap
