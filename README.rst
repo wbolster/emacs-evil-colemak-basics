@@ -264,6 +264,23 @@ Colemak layout on top of a Qwerty layout.
 Configuration
 =============
 
+Use the customize interface to get more information about the
+settings::
+
+  M-x customize-group RET evil-colemak-basics RET
+
+However, since the settings *must* be set before loading the package
+(since they influence how the keymap is constructed), the most
+reliable way is to put ``(setq …)`` in your ``init.el`` file, before
+using ``(require …)`` or invoking any of the autoloaded functions like
+``(global-evil-colemak-basics-mode)``. With ``use-package``, use ``:init`` like this::
+
+  (use-package evil-colemak-basics
+    :init
+    (setq evil-colemak-basics-... ...)
+    :config
+    (global-evil-colemak-basics-mode))
+
 The ``t-f-j`` rotation is enabled by default but can be disabled using::
 
   (setq evil-colemak-basics-rotate-t-f-j nil)
@@ -287,18 +304,6 @@ looks like this::
     (setq evil-colemak-basics-char-jump-commands 'evil-snipe)
     :config
     (global-evil-colemak-basics-mode))
-
-You can also use the customize interface to get more information about
-these settings::
-
-  M-x customize-group RET evil-colemak-basics RET
-
-However, since the settings *must* be set before loading the package
-(since they influence how the keymap is constructed), the most
-reliable way is to put ``(setq …)`` in your ``init.el`` file, before
-using ``(require …)`` or invoking any of the autoloaded functions like
-``(global-evil-colemak-basics-mode)``.
-
 
 Mod-DH
 ======
