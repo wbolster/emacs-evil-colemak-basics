@@ -281,9 +281,26 @@ using ``(require …)`` or invoking any of the autoloaded functions like
     :config
     (global-evil-colemak-basics-mode))
 
+``t-f-j`` rotation
+------------------
+
 The ``t-f-j`` rotation is enabled by default but can be disabled using::
 
   (setq evil-colemak-basics-rotate-t-f-j nil)
+
+Mod-DH
+------
+
+Support for the Mod-DH variation of Colemak, also known as Mod-DHm,
+can be enabled with::
+
+  (setq evil-colemak-basics-layout-mod 'mod-dh)
+
+This will swap the bindings for ``m`` and ``h``, leaving all other
+bindings as is.
+
+evil-snipe
+----------
 
 To use evil-snipe_ for the ‘jump to character’ and ‘jump until
 character’ commands, use::
@@ -304,17 +321,6 @@ looks like this::
     (setq evil-colemak-basics-char-jump-commands 'evil-snipe)
     :config
     (global-evil-colemak-basics-mode))
-
-Mod-DH
-======
-
-Support for the mod-DH variation of Colemak, also known as mod-DHm,
-can be enabled with::
-
-  (setq evil-colemak-basics-layout-mod 'mod-dh)
-
-This will swap the bindings for ``m`` and ``h``, leaving all other
-bindings as is.
 
 
 Credits
