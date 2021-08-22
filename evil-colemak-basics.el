@@ -70,7 +70,7 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
                  (const :tag "evil-snipe" evil-snipe)))
 
 (defun evil-colemak-basics--make-keymap ()
-  "Initialise the keymap baset on the current configuration."
+  "Initialise the keymap based on the current configuration."
   (let ((keymap (make-sparse-keymap)))
     (evil-define-key '(motion normal visual) keymap
       "n" 'evil-next-line
