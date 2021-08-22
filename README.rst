@@ -7,7 +7,7 @@ optimized for the Colemak_ keyboard layout. (As an extra, there
 is also a Vim version of most of the bindings, though Vim is
 less hackable than Emacs.)
 
-.. _evil-mode: https://bitbucket.org/lyro/evil/
+.. _evil-mode: https://github.com/emacs-evil/evil
 .. _Colemak: https://colemak.com/
 
 Designed as a smart hybrid between Colemak and Qwerty, it works
