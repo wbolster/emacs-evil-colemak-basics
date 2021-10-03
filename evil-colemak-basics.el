@@ -132,7 +132,7 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
       (evil-define-key '(motion normal visual) keymap
         "m" 'evil-backward-char)
       (evil-define-key 'normal keymap
-	    "h" 'evil-set-marker))
+        "h" 'evil-set-marker))
     keymap))
 
 (defvar evil-colemak-basics-keymap
