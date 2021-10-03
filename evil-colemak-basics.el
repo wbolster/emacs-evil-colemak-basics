@@ -75,7 +75,6 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
     (evil-define-key '(motion normal visual) keymap
       "n" 'evil-next-line
       "gn" 'evil-next-visual-line
-      "gN" 'evil-next-visual-line
       "e" 'evil-previous-line
       "ge" 'evil-previous-visual-line
       "E" 'evil-lookup
