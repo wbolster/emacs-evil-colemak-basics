@@ -62,7 +62,7 @@ operator-pending state (``o``, inherits from motion state):
    * - ``l``
      - ``u``
      - undo
-     - ``_nv_``
+     - ``_n__``
      - yes
      -
 
@@ -79,6 +79,13 @@ operator-pending state (``o``, inherits from motion state):
      - ``mnv_``
      - yes
      -
+
+   * - ``l``, ``L``
+     - ``u``, ``U``
+     - downcase/upcase
+     - ``__v_``
+     - no
+     - also mnemonic
 
    * - ``u``
      - ``i``
