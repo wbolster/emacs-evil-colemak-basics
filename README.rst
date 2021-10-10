@@ -80,6 +80,13 @@ operator-pending state (``o``, inherits from motion state):
      - yes
      -
 
+   * - ``I``
+     - ``L``
+     - jump to bottom of window
+     - ``mnvo``
+     - yes
+     -
+
    * - ``l``, ``L``
      - ``u``, ``U``
      - downcase/upcase
