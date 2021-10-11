@@ -1,7 +1,7 @@
 ;;; evil-colemak-basics.el --- Basic Colemak key bindings for evil-mode
 
 ;; Author: Wouter Bolsterlee <wouter@bolsterl.ee>
-;; Version: 2.0.0
+;; Version: 2.2.1
 ;; Package-Requires: ((emacs "24.3") (evil "1.2.12") (evil-snipe "2.0.3"))
 ;; Keywords: convenience emulations colemak evil
 ;; URL: https://github.com/wbolster/evil-colemak-basics
