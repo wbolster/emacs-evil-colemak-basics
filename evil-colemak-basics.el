@@ -92,11 +92,15 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
       "gK" 'evil-previous-match)
     (evil-define-key '(normal visual) keymap
       "N" 'evil-join
-      "gN" 'evil-join-whitespace)
+      "gN" 'evil-join-whitespace
+      "gl" 'evil-downcase
+      "gL" 'evil-upcase)
     (evil-define-key 'normal keymap
       "l" 'evil-undo
       "u" 'evil-insert
-      "U" 'evil-insert-line)
+      "U" 'evil-insert-line
+      "gu" 'evil-insert-resume
+      "gU" 'evil-insert-0-line)
     (evil-define-key 'visual keymap
       "l" 'evil-downcase
       "L" 'evil-upcase
