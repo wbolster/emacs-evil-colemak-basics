@@ -233,7 +233,9 @@ Installation
 
 This package is available from Melpa and can be installed with the
 package manager (``package.el``) that comes bundled with Emacs 24+.
-With `use-package`, the minimal form looks like like this::
+With `use-package`, the minimal form looks like like this:
+
+.. code-block:: elisp
 
   (use-package evil-colemak-basics)
 
@@ -242,7 +244,9 @@ Or manually install by running::
   M-x package-install RET evil-colemak-basics RET
 
 Alternatively, put the Elisp file somewhere in your loading path and
-load it explicitly::
+load it explicitly:
+
+.. code-block:: elisp
 
   (require 'evil-colemak-basics)
 
@@ -260,7 +264,10 @@ To enable for just a single buffer, use::
 
   M-x evil-colemak-basics-mod RET
 
-To enable permanently, call ``(global-evil-colemak-basics-mode)`` from your ``init.el``. With ``use-package`` this looks like this::
+To enable permanently, call ``(global-evil-colemak-basics-mode)`` from
+your ``init.el``. With ``use-package`` this looks like this:
+
+.. code-block:: elisp
 
   (use-package evil-colemak-basics
     :config
@@ -287,7 +294,10 @@ However, since the settings *must* be set before loading the package
 (since they influence how the keymap is constructed), the most
 reliable way is to put ``(setq …)`` in your ``init.el`` file, before
 using ``(require …)`` or invoking any of the autoloaded functions like
-``(global-evil-colemak-basics-mode)``. With ``use-package``, use ``:init`` like this::
+``(global-evil-colemak-basics-mode)``. With ``use-package``, use
+``:init`` like this:
+
+.. code-block:: elisp
 
   (use-package evil-colemak-basics
     :init
@@ -298,7 +308,9 @@ using ``(require …)`` or invoking any of the autoloaded functions like
 ``t-f-j`` rotation
 ------------------
 
-The ``t-f-j`` rotation is enabled by default but can be disabled using::
+The ``t-f-j`` rotation is enabled by default but can be disabled using:
+
+.. code-block:: elisp
 
   (setq evil-colemak-basics-rotate-t-f-j nil)
 
@@ -306,7 +318,9 @@ Mod-DH
 ------
 
 Support for the Mod-DH variation of Colemak, also known as Mod-DHm,
-can be enabled with::
+can be enabled with:
+
+.. code-block:: elisp
 
   (setq evil-colemak-basics-layout-mod 'mod-dh)
 
@@ -317,7 +331,9 @@ evil-snipe
 ----------
 
 To use evil-snipe_ for the ‘jump to character’ and ‘jump until
-character’ commands, use::
+character’ commands, use:
+
+.. code-block:: elisp
 
   (setq evil-colemak-basics-char-jump-commands 'evil-snipe)
 
@@ -327,7 +343,9 @@ Note that this package will load ``evil-snipe``, so if you have any
 configuration that should be set before ``evil-snipe`` is loaded, such
 as ``evil-snipe-auto-disable-substitute``, make sure to configure
 ``evil-snipe`` before this package is loaded. With ``use-package`` it
-looks like this::
+looks like this:
+
+.. code-block:: elisp
 
   (use-package evil-colemak-basics
     :after evil evil-snipe
