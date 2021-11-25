@@ -120,6 +120,10 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
         "gT" 'evil-find-file-at-point-with-line)
       (evil-define-key 'visual keymap
         "gt" 'evil-find-file-at-point-visual)
+      (when (featurep 'tab-bar)  ; Evil also checks this; see evil-maps.el
+        (evil-define-key 'normal keymap
+          "gj" 'tab-bar-switch-to-next-tab
+          "gJ" 'tab-bar-switch-to-prev-tab))
       (cond
        ((eq evil-colemak-basics-char-jump-commands nil)
         (evil-define-key '(motion normal visual) keymap
