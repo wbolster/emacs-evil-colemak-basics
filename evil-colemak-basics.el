@@ -86,8 +86,8 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
       "J" 'evil-forward-WORD-end
       "gj" 'evil-backward-word-end
       "gJ" 'evil-backward-WORD-end
-      "k" 'evil-search-next
-      "K" 'evil-search-previous
+      "k" (if (eq evil-search-module 'evil-search) 'evil-ex-search-next 'evil-search-next)
+      "K" (if (eq evil-search-module 'evil-search) 'evil-ex-search-previous 'evil-search-previous)
       "gk" 'evil-next-match
       "gK" 'evil-previous-match)
     (evil-define-key '(normal visual) keymap
