@@ -354,6 +354,15 @@ looks like this:
     :config
     (global-evil-colemak-basics-mode))
 
+visual-line-mode
+----------------
+
+Make movement commands respect `visual-line-mode` with:
+
+.. code-block:: elisp
+
+  (setq evil-respect-visual-line-mode t)
+
 
 Credits
 =======
