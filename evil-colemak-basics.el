@@ -147,7 +147,7 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
       (evil-define-key '(normal visual) keymap
         "h" 'evil-set-marker))
     (when evil-respect-visual-line-mode
-      (evil-define-key '(motion normal visual-line-mode) keymap
+      (evil-define-key '(motion normal visual) keymap
         "n" 'evil-next-visual-line
         "gn" 'evil-next-line
         "e" 'evil-previous-visual-line
