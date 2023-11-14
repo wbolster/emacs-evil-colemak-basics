@@ -133,8 +133,8 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
           "J" 'evil-find-char-to-backward))
        ((eq evil-colemak-basics-char-jump-commands 'evil-snipe)
         ;; XXX https://github.com/hlissner/evil-snipe/issues/46
-        (evil-snipe-def 1 inclusive "t" "T")
-        (evil-snipe-def 1 exclusive "j" "J")
+        (evil-snipe-def 1 'inclusive "t" "T")
+        (evil-snipe-def 1 'exclusive "j" "J")
         (evil-define-key '(motion normal visual) keymap
           "t" 'evil-snipe-t
           "T" 'evil-snipe-T
