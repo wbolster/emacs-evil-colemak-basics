@@ -133,8 +133,8 @@ In addition to the keys listed explicitly above, variations like
 ``gn`` and ``ge`` (``gj`` and ``gk`` on Qwerty) to navigate visual
 lines instead of real lines also behave as expected.
 
-The tables below indicate whether a key has its Colemak meaning, its
-Qwerty meaning, the same meaning, or neither.
+The tables below indicate whether a key has its Colemak meaning (⬆️), its
+Qwerty meaning (⬇️), the same meaning (↕️), or neither (✖️).
 
 ======= = = = = = = = = = =
 colemak q w f p g j l u y ;
