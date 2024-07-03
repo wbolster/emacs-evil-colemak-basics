@@ -136,23 +136,113 @@ lines instead of real lines also behave as expected.
 The tables below indicate whether a key has its Colemak meaning (⬆️), its
 Qwerty meaning (⬇️), the same meaning (↕️), or neither (✖️).
 
-======= = = = = = = = = = =
-colemak q w f p g j l u y ;
-\       ↕️ ↕️ ⬇️ ⬆️ ⬆️ ✖️ ⬇️ ⬇️ ⬆️ ⬆️
-qwerty  q w e r t y u i o p
-======= = = = = = = = = = =
+.. list-table::
+   :header-rows: 0
 
-======= = = = = = = = = = =
-colemak a r s t d h n e i o
-\       ↕️ ⬆️ ⬆️ ⬇️ ⬆️ ↕️ ⬇️ ⬇️ ⬇️ ⬆️
-qwerty  a s d f g h j k l ;
-======= = = = = = = = = = =
+   * - colemak
+     - q
+     - w
+     - f
+     - p
+     - g
+     - j
+     - l
+     - u
+     - y
+     - ;
 
-======= = = = = = = =
-colemak z x c v b k m
-\       ↕️ ↕️ ↕️ ↕️ ↕️ ⬇️ ↕️
-qwerty  z x c v b n m
-======= = = = = = = =
+   * -
+     - ↕️
+     - ↕️
+     - ⬇️
+     - ⬆️
+     - ⬆️
+     - ✖️
+     - ⬇️
+     - ⬇️
+     - ⬆️
+     - ⬆️
+
+   * - qwerty
+     - q
+     - w
+     - e
+     - r
+     - t
+     - y
+     - u
+     - i
+     - o
+     - p
+
+.. list-table::
+   :header-rows: 0
+
+   * - colemak
+     - a
+     - r
+     - s
+     - t
+     - d
+     - h
+     - n
+     - e
+     - i
+     - o
+
+   * -
+     - ↕️
+     - ⬆️
+     - ⬆️
+     - ⬇️
+     - ⬆️
+     - ↕️
+     - ⬇️
+     - ⬇️
+     - ⬇️
+     - ⬆️
+
+   * - qwerty
+     - a
+     - s
+     - d
+     - f
+     - g
+     - h
+     - j
+     - k
+     - l
+     - ;
+
+.. list-table::
+   :header-rows: 0
+
+   * - colemak
+     - z
+     - x
+     - c
+     - v
+     - b
+     - k
+     - m
+
+   * -
+     - ↕️
+     - ↕️
+     - ↕️
+     - ↕️
+     - ↕️
+     - ⬇️
+     - ↕️
+
+   * - qwerty
+     - z
+     - x
+     - c
+     - v
+     - b
+     - n
+     - m
 
 
 Design rationale
