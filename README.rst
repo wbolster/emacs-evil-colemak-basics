@@ -245,6 +245,27 @@ Qwerty meaning (⬇️), the same meaning (↕️), or neither (✖️).
      - m
 
 
+.. figure:: assets/t-f-j-rotation.png
+   :alt: keyboard layout with t-f-j-rotation
+
+   with t-f-j rotation
+
+
+.. figure:: assets/no-t-f-j-rotation.png
+   :alt: keyboard layout without t-f-j-rotation
+
+   without t-f-j rotation
+
+
+========= ==================
+key color meaning
+========= ==================
+⚪        Colemak and Qwerty
+🔵        Colemak
+🟢        Qwerty
+🔴        neither
+========= ==================
+
 Design rationale
 ================
 
