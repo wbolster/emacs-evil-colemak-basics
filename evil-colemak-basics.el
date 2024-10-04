@@ -59,7 +59,7 @@ different position)."
   "The set of commands to use for jumping to characters.
 
 By default, the built-in evil commands evil-find-char (and
-variations) are used; when set to the symbol 'evil-snipe, this
+variations) are used; when set to the symbol \\='evil-snipe, this
 behaves like evil-snipe-override-mode, but adapted to the right
 keys.
 
@@ -133,13 +133,17 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
           "J" 'evil-find-char-to-backward))
        ((eq evil-colemak-basics-char-jump-commands 'evil-snipe)
         ;; XXX https://github.com/hlissner/evil-snipe/issues/46
-        (evil-snipe-def 1 inclusive "t" "T")
-        (evil-snipe-def 1 exclusive "j" "J")
+        (evil-snipe-def 1 'inclusive "t" "T"
+                        :forward-fn evil-colemak-basics-snipe-t
+                        :backward-fn evil-colemak-basics-snipe-T)
+        (evil-snipe-def 1 'exclusive "j" "J"
+                        :forward-fn evil-colemak-basics-snipe-j
+                        :backward-fn evil-colemak-basics-snipe-J)
         (evil-define-key '(motion normal visual) keymap
-          "t" 'evil-snipe-t
-          "T" 'evil-snipe-T
-          "j" 'evil-snipe-j
-          "J" 'evil-snipe-J))
+          "t" 'evil-colemak-basics-snipe-t
+          "T" 'evil-colemak-basics-snipe-T
+          "j" 'evil-colemak-basics-snipe-j
+          "J" 'evil-colemak-basics-snipe-J))
        (t (user-error "Invalid evil-colemak-basics-char-jump-commands configuration"))))
     (when (eq evil-colemak-basics-layout-mod 'mod-dh)
       (evil-define-key '(motion normal visual) keymap
