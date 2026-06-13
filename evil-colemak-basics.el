@@ -69,6 +69,11 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
   :type '(choice (const :tag "default" nil)
                  (const :tag "evil-snipe" evil-snipe)))
 
+(declare-function evil-colemak-basics-snipe-t "evil-colemak-basics")
+(declare-function evil-colemak-basics-snipe-T "evil-colemak-basics")
+(declare-function evil-colemak-basics-snipe-j "evil-colemak-basics")
+(declare-function evil-colemak-basics-snipe-J "evil-colemak-basics")
+
 (defun evil-colemak-basics--make-keymap ()
   "Initialise the keymap based on the current configuration."
   (let ((keymap (make-sparse-keymap)))
