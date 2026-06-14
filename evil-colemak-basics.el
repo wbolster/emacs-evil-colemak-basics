@@ -74,112 +74,110 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
 (declare-function evil-colemak-basics-snipe-j "evil-colemak-basics")
 (declare-function evil-colemak-basics-snipe-J "evil-colemak-basics")
 
-(defun evil-colemak-basics--make-keymap ()
-  "Initialise the keymap based on the current configuration."
-  (let ((keymap (make-sparse-keymap)))
-    (evil-define-key '(motion normal visual) keymap
-      "n" 'evil-next-line
-      "gn" 'evil-next-visual-line
-      "e" 'evil-previous-line
-      "E" 'evil-lookup
-      "ge" 'evil-previous-visual-line
-      "i" 'evil-forward-char
-      "I" 'evil-window-bottom
-      "zi" 'evil-scroll-column-right
-      "zI" 'evil-scroll-right
-      "j" 'evil-forward-word-end
-      "J" 'evil-forward-WORD-end
-      "gj" 'evil-backward-word-end
-      "gJ" 'evil-backward-WORD-end
-      "k" (if (eq evil-search-module 'evil-search) 'evil-ex-search-next 'evil-search-next)
-      "K" (if (eq evil-search-module 'evil-search) 'evil-ex-search-previous 'evil-search-previous)
-      "gk" 'evil-next-match
-      "gK" 'evil-previous-match)
-    (evil-define-key '(normal visual) keymap
-      "N" 'evil-join
-      "gN" 'evil-join-whitespace
-      "gl" 'evil-downcase
-      "gL" 'evil-upcase)
-    (evil-define-key 'normal keymap
-      "l" 'evil-undo
-      "u" 'evil-insert
-      "U" 'evil-insert-line
-      "gu" 'evil-insert-resume
-      "gU" 'evil-insert-0-line)
-    (evil-define-key 'visual keymap
-      "l" 'evil-downcase
-      "L" 'evil-upcase
-      "U" 'evil-insert)
-    (evil-define-key '(visual operator) keymap
-      "u" evil-inner-text-objects-map)
-    (evil-define-key 'operator keymap
-      "i" 'evil-forward-char)
-    (when evil-colemak-basics-rotate-t-f-j
-      (evil-define-key '(motion normal visual) keymap
-        "f" 'evil-forward-word-end
-        "F" 'evil-forward-WORD-end
-        "gf" 'evil-backward-word-end
-        "gF" 'evil-backward-WORD-end)
-      (evil-define-key 'normal keymap
-        "gt" 'find-file-at-point
-        "gT" 'evil-find-file-at-point-with-line)
-      (evil-define-key 'visual keymap
-        "gt" 'evil-find-file-at-point-visual)
-      (when (featurep 'tab-bar)  ; Evil also checks this; see evil-maps.el
-        (evil-define-key 'normal keymap
-          "gj" 'tab-bar-switch-to-next-tab
-          "gJ" 'tab-bar-switch-to-prev-tab))
-      (cond
-       ((eq evil-colemak-basics-char-jump-commands nil)
-        (evil-define-key '(motion normal visual) keymap
-          "t" 'evil-find-char
-          "T" 'evil-find-char-backward
-          "j" 'evil-find-char-to
-          "J" 'evil-find-char-to-backward))
-       ((eq evil-colemak-basics-char-jump-commands 'evil-snipe)
-        ;; XXX https://github.com/hlissner/evil-snipe/issues/46
-        (evil-snipe-def 1 'inclusive "t" "T"
-                        :forward-fn evil-colemak-basics-snipe-t
-                        :backward-fn evil-colemak-basics-snipe-T)
-        (evil-snipe-def 1 'exclusive "j" "J"
-                        :forward-fn evil-colemak-basics-snipe-j
-                        :backward-fn evil-colemak-basics-snipe-J)
-        (evil-define-key '(motion normal visual) keymap
-          "t" 'evil-colemak-basics-snipe-t
-          "T" 'evil-colemak-basics-snipe-T
-          "j" 'evil-colemak-basics-snipe-j
-          "J" 'evil-colemak-basics-snipe-J))
-       (t (user-error "Invalid evil-colemak-basics-char-jump-commands configuration"))))
-    (when (eq evil-colemak-basics-layout-mod 'mod-dh)
-      (evil-define-key '(motion normal visual) keymap
-        "m" 'evil-backward-char)
-      (evil-define-key '(normal visual) keymap
-        "h" 'evil-set-marker))
-    (when evil-respect-visual-line-mode
-      (evil-define-key '(motion normal visual) keymap
-        "n" 'evil-next-visual-line
-        "gn" 'evil-next-line
-        "e" 'evil-previous-visual-line
-        "ge" 'evil-previous-line
-        "0" 'evil-beginning-of-visual-line
-        "g0" 'evil-beginning-of-line
-        "$" 'evil-end-of-visual-line
-        "g$" 'evil-end-of-line
-        "V" 'evil-visual-screen-line))
-    keymap))
+(defun evil-colemak-basics--clear-keys ()
+  "Clear existing key bindings for the minor mode."
+  (dolist (state-entry evil-minor-mode-keymaps-alist)
+    (setcdr state-entry
+            (assq-delete-all 'evil-colemak-basics-mode (cdr state-entry)))))
 
-(defvar evil-colemak-basics-keymap
-  (evil-colemak-basics--make-keymap)
-  "Keymap for evil-colemak-basics-mode.")
+(defun evil-colemak-basics--define-keys ()
+  "Define key bindings based on the current configuration."
+  (evil-colemak-basics--clear-keys)
+  (evil-define-minor-mode-key '(motion normal visual) 'evil-colemak-basics-mode
+    "n" 'evil-next-line
+    "gn" 'evil-next-visual-line
+    "e" 'evil-previous-line
+    "E" 'evil-lookup
+    "ge" 'evil-previous-visual-line
+    "i" 'evil-forward-char
+    "I" 'evil-window-bottom
+    "zi" 'evil-scroll-column-right
+    "zI" 'evil-scroll-right
+    "j" 'evil-forward-word-end
+    "J" 'evil-forward-WORD-end
+    "gj" 'evil-backward-word-end
+    "gJ" 'evil-backward-WORD-end
+    "k" (if (eq evil-search-module 'evil-search) 'evil-ex-search-next 'evil-search-next)
+    "K" (if (eq evil-search-module 'evil-search) 'evil-ex-search-previous 'evil-search-previous)
+    "gk" 'evil-next-match
+    "gK" 'evil-previous-match)
+  (evil-define-minor-mode-key '(normal visual) 'evil-colemak-basics-mode
+    "N" 'evil-join
+    "gN" 'evil-join-whitespace
+    "gl" 'evil-downcase
+    "gL" 'evil-upcase)
+  (evil-define-minor-mode-key 'normal 'evil-colemak-basics-mode
+    "l" 'evil-undo
+    "u" 'evil-insert
+    "U" 'evil-insert-line
+    "gu" 'evil-insert-resume
+    "gU" 'evil-insert-0-line)
+  (evil-define-minor-mode-key 'visual 'evil-colemak-basics-mode
+    "l" 'evil-downcase
+    "L" 'evil-upcase
+    "U" 'evil-insert)
+  (evil-define-minor-mode-key '(visual operator) 'evil-colemak-basics-mode
+    "u" evil-inner-text-objects-map)
+  (evil-define-minor-mode-key 'operator 'evil-colemak-basics-mode
+    "i" 'evil-forward-char)
+  (when evil-colemak-basics-rotate-t-f-j
+    (evil-define-minor-mode-key '(motion normal visual) 'evil-colemak-basics-mode
+      "f" 'evil-forward-word-end
+      "F" 'evil-forward-WORD-end
+      "gf" 'evil-backward-word-end
+      "gF" 'evil-backward-WORD-end)
+    (evil-define-minor-mode-key 'normal 'evil-colemak-basics-mode
+      "gt" 'find-file-at-point
+      "gT" 'evil-find-file-at-point-with-line)
+    (evil-define-minor-mode-key 'visual 'evil-colemak-basics-mode
+      "gt" 'evil-find-file-at-point-visual)
+    (when (featurep 'tab-bar)  ; Evil also checks this; see evil-maps.el
+      (evil-define-minor-mode-key 'normal 'evil-colemak-basics-mode
+        "gj" 'tab-bar-switch-to-next-tab
+        "gJ" 'tab-bar-switch-to-prev-tab))
+    (cond
+     ((eq evil-colemak-basics-char-jump-commands nil)
+      (evil-define-minor-mode-key '(motion normal visual) 'evil-colemak-basics-mode
+        "t" 'evil-find-char
+        "T" 'evil-find-char-backward
+        "j" 'evil-find-char-to
+        "J" 'evil-find-char-to-backward))
+     ((eq evil-colemak-basics-char-jump-commands 'evil-snipe)
+      ;; XXX https://github.com/hlissner/evil-snipe/issues/46
+      (evil-snipe-def 1 'inclusive "t" "T"
+                      :forward-fn evil-colemak-basics-snipe-t
+                      :backward-fn evil-colemak-basics-snipe-T)
+      (evil-snipe-def 1 'exclusive "j" "J"
+                      :forward-fn evil-colemak-basics-snipe-j
+                      :backward-fn evil-colemak-basics-snipe-J)
+      (evil-define-minor-mode-key '(motion normal visual) 'evil-colemak-basics-mode
+        "t" 'evil-colemak-basics-snipe-t
+        "T" 'evil-colemak-basics-snipe-T
+        "j" 'evil-colemak-basics-snipe-j
+        "J" 'evil-colemak-basics-snipe-J))
+     (t (user-error "Invalid evil-colemak-basics-char-jump-commands configuration"))))
+  (when (eq evil-colemak-basics-layout-mod 'mod-dh)
+    (evil-define-minor-mode-key '(motion normal visual) 'evil-colemak-basics-mode
+      "m" 'evil-backward-char)
+    (evil-define-minor-mode-key '(normal visual) 'evil-colemak-basics-mode
+      "h" 'evil-set-marker))
+  (when evil-respect-visual-line-mode
+    (evil-define-minor-mode-key '(motion normal visual) 'evil-colemak-basics-mode
+      "n" 'evil-next-visual-line
+      "gn" 'evil-next-line
+      "e" 'evil-previous-visual-line
+      "ge" 'evil-previous-line
+      "0" 'evil-beginning-of-visual-line
+      "g0" 'evil-beginning-of-line
+      "$" 'evil-end-of-visual-line
+      "g$" 'evil-end-of-line
+      "V" 'evil-visual-screen-line)))
 
-(defun evil-colemak-basics--refresh-keymap ()
-  "Refresh the keymap using the current configuration."
-  (setq evil-colemak-basics-keymap (evil-colemak-basics--make-keymap)))
+(evil-colemak-basics--define-keys)
 
 ;;;###autoload
 (define-minor-mode evil-colemak-basics-mode
   "Minor mode with evil-mode enhancements for the Colemak keyboard layout."
-  :keymap evil-colemak-basics-keymap
   :lighter " hnei")
 
 ;;;###autoload
