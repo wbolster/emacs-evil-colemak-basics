@@ -403,7 +403,7 @@ settings::
 
 However, since the settings *must* be set before loading the package
 (since they influence how the keymap is constructed), the most
-reliable way is to put ``(setq …)`` in your ``init.el`` file, before
+reliable way is to put ``(setopt …)`` in your ``init.el`` file, before
 using ``(require …)`` or invoking any of the autoloaded functions like
 ``(global-evil-colemak-basics-mode)``. With ``use-package``, use
 ``:init`` like this:
@@ -412,7 +412,7 @@ using ``(require …)`` or invoking any of the autoloaded functions like
 
   (use-package evil-colemak-basics
     :init
-    (setq evil-colemak-basics-... ...)
+    (setopt evil-colemak-basics-... ...)
     :config
     (global-evil-colemak-basics-mode))
 
@@ -423,7 +423,7 @@ The ``t-f-j`` rotation is enabled by default but can be disabled using:
 
 .. code-block:: elisp
 
-  (setq evil-colemak-basics-rotate-t-f-j nil)
+  (setopt evil-colemak-basics-rotate-t-f-j nil)
 
 Mod-DH
 ------
@@ -433,7 +433,7 @@ can be enabled with:
 
 .. code-block:: elisp
 
-  (setq evil-colemak-basics-layout-mod 'mod-dh)
+  (setopt evil-colemak-basics-layout-mod 'mod-dh)
 
 This will swap the bindings for ``m`` and ``h``, leaving all other
 bindings as is.
@@ -446,7 +446,7 @@ character’ commands, use:
 
 .. code-block:: elisp
 
-  (setq evil-colemak-basics-char-jump-commands 'evil-snipe)
+  (setopt evil-colemak-basics-char-jump-commands 'evil-snipe)
 
 .. _evil-snipe: https://github.com/hlissner/evil-snipe
 
@@ -461,7 +461,7 @@ looks like this:
   (use-package evil-colemak-basics
     :after evil evil-snipe
     :init
-    (setq evil-colemak-basics-char-jump-commands 'evil-snipe)
+    (setopt evil-colemak-basics-char-jump-commands 'evil-snipe)
     :config
     (global-evil-colemak-basics-mode))
 
@@ -472,7 +472,7 @@ Make movement commands respect `visual-line-mode` with:
 
 .. code-block:: elisp
 
-  (setq evil-respect-visual-line-mode t)
+  (setopt evil-respect-visual-line-mode t)
 
 
 Credits
