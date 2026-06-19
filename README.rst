@@ -419,15 +419,17 @@ using ``(require …)`` or invoking any of the autoloaded functions like
 Opt-out certain major modes
 ---------------------------
 
-The variable ``evil-colemak-basics-disabled-modes`` contains a list of
-major modes in which this package should not automatically activate.
-To extend the list, use something like this:
+The variable ``global-evil-colemak-basics-modes`` defines the major
+modes in which this package should automatically activate. This is
+implemented using the ``:predicate`` parameter to
+``define-globalized-minor-mode``. To exclude a major mode, use
+something like this:
 
 .. code-block:: elisp
 
   (use-package example-package
     :config
-    (add-to-list 'evil-colemak-basics-disabled-modes 'example-package-mode))
+    (add-to-list 'global-evil-colemak-basics-modes '(not example-package-mode)))
 
 ``t-f-j`` rotation
 ------------------
